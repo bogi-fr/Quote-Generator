@@ -1,0 +1,296 @@
+:root {
+    --primary-color: #FFFFF0;
+    --primary-background-color: #FFF5EE;
+    --primary-border-color: #FAF0E6;
+    --secondary-color: #deb887;
+    --secondary-background-color: #FFFAFA;
+    --primary-black-color: #000000;
+    --primary-darkgrey-color: #917D6E;
+    --secondary-gray-color: #F6F2EF; 
+    --primary-white-color:#FFFFFF;
+  }
+
+body{ 
+  background-color: var(--secondary-gray-color);
+}
+
+a, p{
+    font-family: 'Acme', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 19px;
+    color: var(--primary-black-color);
+}
+
+button {
+  font-family: 'Acme', sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  background-color: var(--primary-background-color);
+}
+
+
+
+/**/
+/** Navbar **/
+/**/
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-background-color);
+    border: solid 1px var(--primary-border-color);
+    padding: 0 16px 0 16px;
+    margin-bottom: 48px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  color: var(--primary-black-color);
+}
+
+.navigation_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+}
+
+
+
+/**/
+/** Main **/
+/**/
+.quote-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  #quote-background-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 30px;
+    height: 400px; /**(important for index.js)**/
+    width: 1350px; /**(important for index.js)**/
+    background-color: #F4E6D7;
+    border: solid 2px var(--primary-black-color);
+    border-radius: 40px;
+    position: relative;
+    border-radius: 24px;
+  }
+  
+  #quoteBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px; /**(important for index.js)**/
+    height: 350px; /**(important for index.js)**/
+    top: 0px;  /**(important for index.js)**/
+    left: 0px; /**(important for index.js)**/
+    /* border: solid black 2px; */
+  }
+
+
+  #quote{
+    font-style: italic; /**(important for index.js)**/
+    font-weight: normal; /**(important for index.js)**/
+    text-decoration: none; /**(important for index.js)**/
+    font-size: 32px; /**(important for index.js)**/
+    text-align: center; /**(important for index.js)**/
+
+    /* border: solid black 2px; */
+  }
+
+  
+  /**/
+  /** Section **/
+  /**/
+  .section-flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .button {
+      color: var(--primary-black-color);
+      padding: 8px 16px;
+      font-size: 16px;
+      border: solid 2px var(--primary-black-color);
+      border-radius: 16px;
+    }
+    
+  .button:hover{
+      background-color: var(--secondary-color);
+    }
+  
+    .RatioButton{
+      display: block; /**(important for index.js)**/
+    }
+
+
+  /**/
+  /** Settings Structur **/
+  /**/
+    .settings-menu{
+      display: none; /**(important for index.js)**/
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      /* border: solid black 1px; */        /**(here you can see witch part it is!)* */
+    }
+
+    .settings-sections-flex{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* border: solid black 1px; */        /**(here you can see witch part it is!)* */
+    }
+
+    .text-editing-flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      /* border: solid black 1px; */        /**(here you can see witch part it is!)* */
+    }
+    
+    .setings-heading{
+      font-family: 'Cormorant Garamond', serif;
+      text-decoration: underline;
+    }
+
+    .change-card-flex{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      /* border: solid black 1px; */        /**(here you can see witch part it is!)* */
+    }
+
+    .color-change-flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      /* border: solid black 1px; */        /**(here you can see witch part it is!)**/
+    }
+
+    .settings-item{
+      width: 55px;
+      height: 55px;
+      border: solid 2px black;
+      background-color: var(--secondary-gray-color);
+      border-radius: 8px;
+    }
+
+    .settings-item:hover{
+      width: 55px;
+      height: 55px;
+      border: solid 4px green;
+      border-radius: 8px;
+    }
+  
+
+
+  /**/
+  /** Aspect Ratio Buttons  **/
+  /**/
+.aspect-ratio-menu{
+  display: none;   /**(important for index.js)**/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aspect-ratio{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.ratio-item{
+      height: 55px;
+      border: solid 2px black;
+      background-color: var(--secondary-gray-color);
+      border-radius: 8px;
+}
+
+.ratio-item:hover{
+  border: solid 4px green;
+}
+
+
+  /**/
+  /** Position input  **/
+  /**/
+  .position-menu{
+    display: none;   /**(important for index.js)**/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .posi-input{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+.range-Input{
+  width: 200px;
+}
+
+
+  /**/
+  /** Text Editing Style Buttons (important for index.js) **/
+  /**/
+  .underlined{
+    text-decoration: underline; /**(important for index.js)**/
+  } 
+
+  .italic{
+    font-style: italic; /**(important for index.js)**/
+  }
+
+  .bold{
+    font-weight: bolder; /**(important for index.js)**/
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    background-color: var(--secondary-gray-color);
+  }
+
+  .footer-image {
+   height: 40px;
+   margin: 8px;
+  }
+
+
+
+  .secred-feature-button{
+    margin: 10px;
+    color: #F6F2EF;
+    border: #F6F2EF;
+  }
