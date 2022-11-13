@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="color.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Cormorant+Garamond:ital,wght@1,700&display=swap" rel="stylesheet">
+    
+</head>
+    
+<body onload="fetchQuotes()">
+
+    <nav class="navbar">
+        <h1 class="title">Quote Generator</h1>
+        <div class="navigation_links">
+            <a href="">About</a>
+            <a href="">All Quotes</a>
+            <a href="">Add Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="quote-flex">                <!-- Important for index.js -->
+
+            <div id="quote-background-flex">    <!-- Important for index.js -->
+            
+                <div id="quoteBox">
+                    <p id="quote">  </p>              <!-- Important for index.js -->
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <div class="section-flex">
+            <button type="submit" class="button" onclick="showSettingsMenu()">Settings</button> <!-- Important for index.js -->
+            
+            <button class="button" id="new-quote">New Quote</button>    <!-- Important for index.js -->
+            
+            <button type="submit" class="button" onclick="randomiseAll()">Random Style</button>       <!-- Important for index.js -->
+            
+            <button type="submit" class="button RatioButton"  id="RatioButton" onclick="aspectRatio()">Ratio</button>         <!-- Important for index.js -->
+            
+        </div>  
+        
+        
+        <div class="settings-menu" id="settings">
+            <div class="settings-sections-flex">
+                <h2 class="setings-heading">Change Fontcolor:</h2>
+                <div class="change-card-flex">
+                    <p>Black To White Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Rich-Black" onclick="fontColorChange(0)"> . </button>            <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Jet" onclick="fontColorChange(1)">.  </button>                   <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Gray" onclick="fontColorChange(2)">.  </button>                  <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Silver-Foil" onclick="fontColorChange(3)"> . </button>           <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Gainsboro" onclick="fontColorChange(4)"> . </button>             <!-- Important for index.js -->
+                        <button type="submit" class="settings-item White" onclick="fontColorChange(5)">  .</button>                 <!-- Important for index.js -->
+                    </div>
+                    <p>High Contrast Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Blue-Violet" onclick="fontColorChange(6)">.  </button>           <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Jonquil" onclick="fontColorChange(7)">.  </button>               <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Shocking-Pink" onclick="fontColorChange(8)">  .</button>         <!-- Important for index.js -->    
+                        <button type="submit" class="settings-item RYB-Blue" onclick="fontColorChange(9)">.  </button>              <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Alien-Armpit" onclick="fontColorChange(10)">.  </button>         <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Spanish-Crimson" onclick="fontColorChange(11)">  .</button>      <!-- Important for index.js -->             
+                    </div>
+                    <p>Happy Earth Day Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Bud-Green" onclick="fontColorChange(12)">.  </button>            <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Deep-Aquamarine" onclick="fontColorChange(13)">.  </button>      <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Fawn" onclick="fontColorChange(14)">  .</button>                 <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Cookies-And-Cream" onclick="fontColorChange(15)">.  </button>    <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Middle-Red" onclick="fontColorChange(16)">.  </button>           <!-- Important for index.js -->
+                        <button type="submit" class="settings-item  Bdazzled-Blue" onclick="fontColorChange(17)">  .</button>       <!-- Important for index.js -->                      
+                    </div>
+                </div>
+            </div>
+            <div class="settings-sections-flex">
+                <h2 class="setings-heading"> Text Editing: </h2>
+                    <div class="change-card-flex">
+                        <p>Alighment:</p>
+                        <div class="text-editing-flex">
+                            <button type="submit" class="settings-item" onclick="justifyText(0)"><img src="img\left-alighn.jpg" alt="left-alighnt" height="40px"></button>      <!-- Important for index.js -->
+                            <button type="submit" class="settings-item" onclick="justifyText(1)"><img src="img\center-alighn.jpg" alt="center-alighnt" height="40px"> </button> <!-- Important for index.js -->
+                            <button type="submit" class="settings-item" onclick="justifyText(2)"><img src="img\right-alighn.jpg" alt="right-alighnt" height="40px"> </button>   <!-- Important for index.js -->      
+                        </div>
+                        <p>Style:</p>
+                        <div class="text-editing-flex">    
+                            <button type="submit" class="settings-item bold" onclick="changeFontWeight()"> B </button>              <!-- Important for index.js -->
+                            <button type="submit" class="settings-item italic" onclick="changeFontStyle()"> I </button>             <!-- Important for index.js -->
+                            <button type="submit" class="settings-item underlined" onclick="changeTextDecoration()"> U </button>    <!-- Important for index.js -->
+                        </div>
+                        <p>Size:</p>
+                        <div class="text-editing-flex">    
+                            <button type="submit" class="settings-item" onclick="changesize(0)"> S </button>        <!-- Important for index.js -->
+                            <button type="submit" class="settings-item" onclick="changesize(1)"> M </button>        <!-- Important for index.js -->
+                            <button type="submit" class="settings-item" onclick="changesize(2)"> L </button>        <!-- Important for index.js -->
+                        </div>
+                    </div>        
+            </div>
+            <div class="settings-sections-flex">
+                <h2 class="setings-heading">Change Background:</h2>
+                <div class="change-card-flex">
+                    <p>All In Meditation Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Light-Salmon-Pink" onclick="colorChange(0)"> . </button>     <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Spanish-Pink" onclick="colorChange(1)">.  </button>          <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Linen" onclick="colorChange(2)">.  </button>                 <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Medium-Spring-Bud" onclick="colorChange(3)"> . </button>     <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Dark-Khaki" onclick="colorChange(4)"> . </button>            <!-- Important for index.js -->         
+                        <button type="submit" class="settings-item Light-Taupe" onclick="colorChange(5)">  .</button>           <!-- Important for index.js -->
+                    </div>
+                    <p>Slow New Growth Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Olivine" onclick="colorChange(6)">.  </button>               <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Medium-Spring-Bud" onclick="colorChange(7)">.  </button>     <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Tea-Green" onclick="colorChange(8)">  .</button>             <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Nyanza" onclick="colorChange(9)">.  </button>                <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Green-Sheen" onclick="colorChange(10)">.  </button>          <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Zomp" onclick="colorChange(11)">  .</button>                 <!-- Important for index.js -->      
+                    </div>
+                    <p>Applauding Success Color Scheme:</p>
+                    <div class="color-change-flex">
+                        <button type="submit" class="settings-item Palatinate-Purple" onclick="colorChange(12)">.  </button>    <!-- Important for index.js -->
+                        <button type="submit" class="settings-item X11-Maroon" onclick="colorChange(13)">.  </button>           <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Terra-Cotta" onclick="colorChange(14)">  .</button>          <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Meat-Brown" onclick="colorChange(15)">.  </button>           <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Citron" onclick="colorChange(16)">.  </button>               <!-- Important for index.js -->
+                        <button type="submit" class="settings-item Olive-Drab" onclick="colorChange(17)">  .</button>           <!-- Important for index.js -->          
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-menu" id="posi">
+            <h2 class="setings-heading">Position:</h2>
+            <button onclick="activatePosi()" class="ratio-item" id="actvataButton">Activate</button>
+            <form id="input" >
+                <div class="posi-input" id="activate-posi">   
+                    <div>
+                         <p> X Axis:</p>
+                         <input type="range" class="range-Input" name="left-right" id="left-right" step="1" value="0" min="-240" max="240"  onChange="xAxis()" placeholder="left-right"/>
+                    </div>
+                    <div>
+                         <p> Y Axis:</p> 
+                         <input type="range" class="range-Input" name="up-Down" id="up-Down" step="1" value="0" min="-120" max="120"  onChange="yAxis()" placeholder="up-Down"/>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    
+        <div class="aspect-ratio-menu" id="ratio">
+            <h2 class="setings-heading">Ratio for:</h2>
+            <div class="aspect-ratio">   
+                <button onclick="changeRatio(1)" class="ratio-item">Facebook</button>       <!-- Important for index.js -->
+                <button onclick="changeRatio(2)" class="ratio-item">Instagram</button>      <!-- Important for index.js -->
+                <button onclick="changeRatio(3)" class="ratio-item">TikTok</button>         <!-- Important for index.js -->
+                <button onclick="changeRatio(4)" class="ratio-item">Default</button>        <!-- Important for index.js -->
+            </div> 
+        </div>     
+
+
+
+        <button type="submit" class="secred-feature-button" onclick="positionMenu()">Position</button>         <!-- Important for index.js -->            
+
+    </section>
+
+    <div class="footer">
+        <footer>
+            <a href="https://www.facebook.com/login/"><img class="footer-image" src="img\facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com/i/flow/login"><img class="footer-image" src="img\twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/"><img class="footer-image" src="img\instagram.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/login"><img class="footer-image" src="img\tiktok.png" alt="TikTok"></a>
+            <a href="https://www.snapchat.com/de-DE"><img class="footer-image" src="img\snapchat.png" alt="SnapChat"></a>
+            <a href="https://github.com/"><img class="footer-image" src="img\github.png" alt="GitHub"></a>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
